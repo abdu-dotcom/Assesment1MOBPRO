@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">KalkulatorDiskon</string>
+    <string name="biaya_asli">Biaya Asli</string>
+    <string name="diskon">Diskon</string>
+    <string name="hitung">Hitung</string>
+    <string name="biaya_setelah_diskon">Biaya Setelah Diskon</string>
+    <string name="biaya_diskon">Biaya Diskon</string>
+    <string name="selengkapnya">Selengkapnya</string>
+    <string name="textSelengkapnya">Ingin melihat perhiting diskon secara lengkap, silahkan klik tombol selengkapnya</string>
 </resources>
