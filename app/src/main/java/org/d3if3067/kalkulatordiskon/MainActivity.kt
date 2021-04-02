@@ -1,7 +1,9 @@
 package org.d3if3067.kalkulatordiskon
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.text.TextUtils
 import android.widget.Toast
 import org.d3if3067.kalkulatordiskon.databinding.ActivityMainBinding
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             hitungDiskon()
         }
     }
+
     private fun hitungDiskon(){
         val biaya = binding.biayaAsliEdit.text.toString()
 
@@ -40,5 +43,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.hasilBiayaSetelah.text = biayaSetelahDiskon.toString()
         binding.textView6.text = nilaiDiskon.toString()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
     }
 }
