@@ -7,19 +7,31 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import org.d3if3067.kalkulatordiskon.databinding.FragmentDiskonBinding
 
 class DiskonFragment : Fragment() {
     private lateinit var binding : FragmentDiskonBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
        binding = FragmentDiskonBinding. inflate(layoutInflater,container,false)
         binding.buttonHitung.setOnClickListener{
             hitungDiskon()
         }
+        binding.buttonSelengkap.setOnClickListener{view : View ->
+            val biaya = binding.biayaAsliEdit.text.toString()
+            val diskon = binding.diskonEditText.text.toString()
+            val biayaSetelahDiskon = binding.hasilBiayaSetelah.text.toString()
+            val biayaDiskon = binding.textView6.text.toString()
+            val action = DiskonFragmentDirections.
+            actionDiskonFragmentToSelengkapnyaFragment(biaya,diskon,biayaSetelahDiskon,biayaDiskon)
+
+           findNavController().navigate(action)
+        }
         return binding.root
     }
-
     private fun hitungDiskon(){
         val biaya = binding.biayaAsliEdit.text.toString()
 

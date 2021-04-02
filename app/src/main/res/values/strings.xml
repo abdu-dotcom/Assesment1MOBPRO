@@ -7,4 +7,9 @@
     <string name="biaya_diskon">Biaya Diskon</string>
     <string name="selengkapnya">Selengkapnya</string>
     <string name="textSelengkapnya">Ingin melihat perhiting diskon secara lengkap, silahkan klik tombol selengkapnya</string>
+    <string name="infoSelengkapnya">Biaya asli : %1$s \nDiskon sebesar %2$s persen
+        \nbiaya potongan sebesar %3$s
+        \nbiaya asli setelah diskon sebesar %4$s</string>
+
+
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/diskonFragment">
+
+    <fragment
+        android:id="@+id/diskonFragment"
+        android:name="org.d3if3067.kalkulatordiskon.ui.DiskonFragment"
+        android:label="DiskonFragment"
+        tools:layout="@layout/fragment_diskon">
+        <action
+            android:id="@+id/action_diskonFragment_to_selengkapnyaFragment"
+            app:destination="@id/selengkapnyaFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/selengkapnyaFragment"
+        android:name="org.d3if3067.kalkulatordiskon.ui.SelengkapnyaFragment"
+        android:label="SelengkapnyaFragment"
+        tools:layout="@layout/fragment_selengkapnya">
+    <argument
+        android:name="biaya"
+        app:argType="string" />
+    <argument
+        android:name="diskon"
+        app:argType="string" />
+    <argument
+        android:name="biayaSetelahDiskon"
+        app:argType="string" />
+    <argument
+        android:name="biayaDiskon"
+        app:argType="string" />
+    </fragment>
+</navigation>
