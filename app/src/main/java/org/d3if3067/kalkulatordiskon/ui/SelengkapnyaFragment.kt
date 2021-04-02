@@ -2,6 +2,7 @@ package org.d3if3067.kalkulatordiskon.ui
 
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,8 +21,20 @@ class SelengkapnyaFragment : Fragment() {
         binding = FragmentSelengkapnyaBinding.inflate(layoutInflater,container,false)
 
         binding.textView2.text = getString(R.string.infoSelengkapnya, args.biaya, args.diskon, args.biayaDiskon,args.biayaSetelahDiskon)
+        binding.buttonShare.setOnClickListener{
+            shareData()
+        }
         return binding.root
     }
+    private fun shareData(){
 
+        val message = getString(R.string.infoSelengkapnya, args.biaya, args.diskon, args.biayaDiskon,args.biayaSetelahDiskon)
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+            startActivity(shareIntent)
+        }
+    }
 
 }

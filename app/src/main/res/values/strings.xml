@@ -6,10 +6,15 @@
     <string name="biaya_setelah_diskon">Biaya Setelah Diskon</string>
     <string name="biaya_diskon">Biaya Diskon</string>
     <string name="selengkapnya">Selengkapnya</string>
-    <string name="textSelengkapnya">Ingin melihat perhiting diskon secara lengkap, silahkan klik tombol selengkapnya</string>
+    <string name="textSelengkapnya">Ingin melihat perhitungan diskon secara lengkap, silahkan klik tombol selengkapnya</string>
     <string name="infoSelengkapnya">Biaya asli : %1$s \nDiskon sebesar %2$s persen
         \nbiaya potongan sebesar %3$s
         \nbiaya asli setelah diskon sebesar %4$s</string>
+    <string name="textAbout">Kalkulator Diskon merupakan sebuah aplikasi Android untuk menghitung biaya asli setelah didiskon dan biaya diskon dari biaya asli sehingga seseorang dapat mengetahui banyak biaya yang harus dibayar dan
+        jumlah potongan yang didapat.\n\nAplikasi ini dibuat untuk kelas Mobpro 1.
+        \nTemukan kodenya di https://github.com/abdu-dotcom/Assesment1MOBPRO\n\nCopyright © 2021 Muhammad Abduh Husaini Batubara.\nAll rights reserved.</string>
+    <string name="textViewShare">Ingin share data hasil perhitungan anda ke orang lain, \nsilahkan klik tombol selengkapnya</string>
+    <string name="Share">share</string>
 
 
 </resources>
