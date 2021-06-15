@@ -25,5 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         onConfigurationChanged(newConfig)
+        setContentView(R.layout.activity_main)
+
     }
 }

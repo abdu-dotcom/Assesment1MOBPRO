@@ -3,15 +3,24 @@ package org.d3if3067.kalkulatordiskon.ui
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import org.d3if3067.kalkulatordiskon.R
 import org.d3if3067.kalkulatordiskon.databinding.FragmentDiskonBinding
+import org.d3if3067.kalkulatordiskon.db.hitungDiskonDb
 
 class DiskonFragment : Fragment() {
     private lateinit var binding : FragmentDiskonBinding
+    private val viewModel: DiskonViewModel by lazy {
+        val db = hitungDiskonDb.getInstance(requireContext())
+        val factory = DiskonViewModelFactory(db.dao)
+        ViewModelProvider(this, factory).get(DiskonViewModel::class.java)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
        binding = FragmentDiskonBinding. inflate(layoutInflater,container,false)
@@ -33,6 +42,22 @@ class DiskonFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.gethasilDiskon().observe(viewLifecycleOwner,{
+            if (it == null) return@observe
+            binding.hasilBiayaSetelah.text = it.biayaSetelahDiskon.toString()
+            binding.textView6.text = it.biayaDiskon.toString()
+        })
+        viewModel.data.observe(viewLifecycleOwner,{
+            if(it == null) return@observe
+                Log.d("DiskonFragment", "Data tersimpan. ID = ${it.id}")
+        })
+
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -64,11 +89,7 @@ class DiskonFragment : Fragment() {
             return
         }
 
-        val nilaiDiskon = biaya.toFloat() * (diskon.toFloat()/100)
-        val biayaSetelahDiskon = biaya.toFloat() - nilaiDiskon
-
-        binding.hasilBiayaSetelah.text = biayaSetelahDiskon.toString()
-        binding.textView6.text = nilaiDiskon.toString()
+        viewModel.hitungDiskon(biaya, diskon);
     }
 
 
