@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/VH_biayaAwalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biaya Awal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/VH_diskonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diskon: 40%"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/VH_biayaAkhirText"
+        app:layout_constraintStart_toEndOf="@id/VH_biayaAwalText"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/VH_biayaAwal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp.500.000 "
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/VH_biayaAwalText"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/VH_diskon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="- Rp.45.000"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@+id/VH_biayaAkhir"
+        app:layout_constraintStart_toEndOf="@id/VH_biayaAwal"
+        app:layout_constraintTop_toBottomOf="@+id/VH_diskonText" />
+
+    <TextView
+        android:id="@+id/VH_biayaAkhirText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biaya Akhir"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/VH_biayaAkhir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp.455.000"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/VH_biayaAkhirText"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

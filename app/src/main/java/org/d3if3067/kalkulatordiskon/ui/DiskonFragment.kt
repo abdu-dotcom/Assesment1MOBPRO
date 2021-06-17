@@ -51,10 +51,7 @@ class DiskonFragment : Fragment() {
             binding.hasilBiayaSetelah.text = it.biayaSetelahDiskon.toString()
             binding.textView6.text = it.biayaDiskon.toString()
         })
-        viewModel.data.observe(viewLifecycleOwner,{
-            if(it == null) return@observe
-                Log.d("DiskonFragment", "Data tersimpan. ID = ${it.id}")
-        })
+
 
     }
 
@@ -65,14 +62,19 @@ class DiskonFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menu_about)
-        {
-            findNavController().navigate(
-                R.id.action_diskonFragment_to_tentangFragment)
-            return true
+        when(item.itemId){
+            R.id.menu_about -> {
+                findNavController().navigate(R.id.action_diskonFragment_to_tentangFragment)
+                return true
+            }
+            R.id.menu_histori -> {
+                findNavController().navigate(R.id.action_diskonFragment_to_hisotriFragment)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
+
     private fun hitungDiskon(){
         val biaya = binding.biayaAsliEdit.text.toString()
 

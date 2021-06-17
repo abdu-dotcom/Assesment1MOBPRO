@@ -15,5 +15,11 @@
         \nTemukan kodenya di https://github.com/abdu-dotcom/Assesment1MOBPRO\n\nCopyright © 2021 Muhammad Abduh Husaini Batubara.\nAll rights reserved.</string>
     <string name="textViewShare">Ingin share data hasil perhitungan anda ke orang lain, \nsilahkan klik tombol selengkapnya</string>
     <string name="Share">share</string>
+    <string name="histori">histori</string>
+
+
+    <string name="konfirmasi_hapus">Hapus semua histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 
 </resources>

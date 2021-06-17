@@ -11,31 +11,28 @@ import kotlinx.coroutines.invoke
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.d3if3067.kalkulatordiskon.data.HasilDiskon
+import org.d3if3067.kalkulatordiskon.data.HitungDiskon
 import org.d3if3067.kalkulatordiskon.db.DiskonDao
 import org.d3if3067.kalkulatordiskon.db.DiskonEntity
 
 class DiskonViewModel(private val db: DiskonDao) : ViewModel() {
 
-    val data = db.getLastHitung();
+
     private val hasilDiskon = MutableLiveData<HasilDiskon?>()
 
      fun hitungDiskon(biaya: String, diskon: String){
-         val biaya = biaya.toFloat();
-         val diskon = diskon.toFloat();
-        val nilaiDiskon = biaya * (diskon/100)
-        val biayaSetelahDiskon = biaya- nilaiDiskon
 
+         val dataHitung = DiskonEntity(
+                 biaya = biaya.toFloat(),
+                 diskon = diskon.toFloat(),
+         )
+
+         hasilDiskon.value = HitungDiskon.Hitung(dataHitung);
          //kode mengirim nilai ke object di file HasilDiskon
-        hasilDiskon.value = HasilDiskon(biaya,diskon, biayaSetelahDiskon, nilaiDiskon);
 
          viewModelScope.launch {
              withContext(Dispatchers.IO){
-                 val dataHitung = DiskonEntity(
-                     biaya = biaya,
-                     diskon = diskon,
-                     nilaiDiskon = nilaiDiskon,
-                     biayaSetelahDiskon = biayaSetelahDiskon
-                 )
+
                  db.insert(dataHitung);
              }
          }

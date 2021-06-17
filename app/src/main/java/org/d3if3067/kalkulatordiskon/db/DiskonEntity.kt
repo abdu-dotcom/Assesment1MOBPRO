@@ -9,6 +9,4 @@ class DiskonEntity(
     var id: Long = 0L,
     val biaya: Float,
     val diskon: Float,
-    val nilaiDiskon: Float,
-    val biayaSetelahDiskon: Float
 )
