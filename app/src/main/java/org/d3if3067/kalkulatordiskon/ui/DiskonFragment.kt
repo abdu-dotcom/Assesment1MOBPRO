@@ -23,7 +23,7 @@ class DiskonFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-       binding = FragmentDiskonBinding. inflate(layoutInflater,container,false)
+       binding = FragmentDiskonBinding.inflate(layoutInflater,container,false)
         binding.buttonHitung.setOnClickListener{
             hitungDiskon()
         }
@@ -51,10 +51,7 @@ class DiskonFragment : Fragment() {
             binding.hasilBiayaSetelah.text = it.biayaSetelahDiskon.toString()
             binding.textView6.text = it.biayaDiskon.toString()
         })
-
-
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -71,7 +68,12 @@ class DiskonFragment : Fragment() {
                 findNavController().navigate(R.id.action_diskonFragment_to_hisotriFragment)
                 return true
             }
+            R.id.menu_profile -> {
+                findNavController().navigate(R.id.action_diskonFragment_to_profileFragment)
+                return true
+            }
         }
+
         return super.onOptionsItemSelected(item)
     }
 
@@ -90,9 +92,6 @@ class DiskonFragment : Fragment() {
             Toast.makeText(context,"Masukan jumlah diskon barang", Toast.LENGTH_LONG).show()
             return
         }
-
         viewModel.hitungDiskon(biaya, diskon);
     }
-
-
 }

@@ -1,6 +1,7 @@
 package org.d3if3067.kalkulatordiskon.ui
 
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,13 +13,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.d3if3067.kalkulatordiskon.data.HasilDiskon
 import org.d3if3067.kalkulatordiskon.data.HitungDiskon
+import org.d3if3067.kalkulatordiskon.data.dataDiri
 import org.d3if3067.kalkulatordiskon.db.DiskonDao
 import org.d3if3067.kalkulatordiskon.db.DiskonEntity
+import org.d3if3067.kalkulatordiskon.network.DataApi
+import java.lang.Exception
 
-class DiskonViewModel(private val db: DiskonDao) : ViewModel() {
-
+class   DiskonViewModel(private val db: DiskonDao) : ViewModel() {
 
     private val hasilDiskon = MutableLiveData<HasilDiskon?>()
+
 
      fun hitungDiskon(biaya: String, diskon: String){
 
@@ -39,4 +43,6 @@ class DiskonViewModel(private val db: DiskonDao) : ViewModel() {
     }
     
     fun gethasilDiskon() : LiveData<HasilDiskon?> = hasilDiskon
+
+
 }

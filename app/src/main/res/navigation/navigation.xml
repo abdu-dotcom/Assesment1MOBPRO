@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_diskonFragment_to_hisotriFragment"
             app:destination="@id/hisotriFragment" />
+        <action
+            android:id="@+id/action_diskonFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
 
 
     </fragment>
@@ -50,4 +53,12 @@
         android:name="org.d3if3067.kalkulatordiskon.ui.HisotriFragment"
         android:label="HisotriFragment"
         tools:layout="@layout/fragment_histori"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="org.d3if3067.kalkulatordiskon.ui.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+
+
 </navigation>

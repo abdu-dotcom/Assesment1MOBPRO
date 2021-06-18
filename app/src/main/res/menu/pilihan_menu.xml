@@ -8,9 +8,16 @@
         android:title="@string/histori"
         app:showAsAction="ifRoom"
         />
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile developer"
+        app:showAsAction="never"/>
+
     <item
         android:id="@+id/menu_about"
         android:title="Tentang Aplikasi"
         app:showAsAction="never"/>
+
 
 </menu>
